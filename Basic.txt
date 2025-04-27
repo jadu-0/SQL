@@ -1,0 +1,21 @@
+✿ for starting SQL->mysql -u root -p
+✿ to see all databases-> SHOW DATABASES;
+✿ to see all tables-> SHOW TABLES;
+✿ to create an table-> CREATE TABLE(
+	~~name of rows
+	~~INT,VARCHAR(no),FLOAT,DATE->data types);
+✿ to delete table ->DROP TABLE Table_Name;
+✿ to add data in table ->INSERT INTO USER
+	VALUES(values with  respect to table),
+	(values with  respect to table);
+✿ see all the contents from a table -> SELECT * FROM table_name;
+✿ To delete data (rows) from a table-> DELETE FROM table_name WHERE condition;
+✿ To change (update) data in a table -> UPDATE table_name
+	SET column1 = value1, column2 = value2, ...
+	WHERE condition;
+✿ To remove (drop) a column from a table -> ALTER TABLE table_name
+	DROP COLUMN column_name;
+✿ To add a new column to an existing table->ALTER TABLE table_name
+	ADD column_name datatype;
+✿ Use of Primary and foregin key-> 
+	FOREIGN KEY (Column_name) REFERENCES referd_table_name(referd_table's_cloumn_name);
