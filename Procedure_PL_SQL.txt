@@ -1,0 +1,24 @@
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(100),
+    dept_id INT,
+    salary FLOAT
+);
+INSERT INTO Employee VALUES (101, 'Rohit Kumar', 2, 60000);
+INSERT INTO Employee VALUES (102, 'Aarav Mehta', 1, 45000);
+INSERT INTO Employee VALUES (103, 'Riya Sharma', 3, 50000);
+INSERT INTO Employee VALUES (104, 'Sneha Patil', 2, 70000);
+DELIMITER $$
+CREATE FUNCTION GetTotalSalaryByDept(p_dept_id INT) 
+RETURNS FLOAT
+DETERMINISTIC
+BEGIN
+    DECLARE total_salary FLOAT;
+    SELECT SUM(salary) INTO total_salary
+    FROM Employee
+    WHERE dept_id = p_dept_id;
+    RETURN total_salary;
+END$$
+DELIMITER ;
+SELECT GetTotalSalaryByDept(2) AS TotalSalary;
+SELECT * FROM Employee WHERE emp_id = 101;
